@@ -1,0 +1,8 @@
+---
+- name: openjdk install
+  package: name=java-{{ version.redhat }}-openjdk state=latest
+  when: ansible_os_family == "RedHat"
+
+- name: openjdk install
+  package: name=openjdk-{{ version.debian }}-jre state=latest
+  when: ansible_os_family == "Debian"
